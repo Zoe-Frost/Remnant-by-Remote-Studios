@@ -11,4 +11,14 @@
     --remnant-black: #050505;
 }
 
+/* Mirror effect for the webcam */
+
+.mirror{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
 /**/
+
+
