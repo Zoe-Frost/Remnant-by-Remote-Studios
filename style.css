@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Remnant colours*/
+:root{
+    --remnant-darkred: #a7001a ;
+    --remnant-red: #d70000;
+    --remnant-white: #ffffff;
+    --remnant-black: #050505;
+}
+
+/**/
