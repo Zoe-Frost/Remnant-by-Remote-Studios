@@ -8,7 +8,7 @@ let segmentation;
 
 // Resising the canvas to fit the full screen
 function resizeCanvas() {
-    canvas.Width = window.innerWidth;
+    canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 
@@ -35,7 +35,7 @@ async function setupCamera() {
 function setupSegmentation() {
     segmentation = new SelfieSegmentation({
         locateFile: (file) => 
-            `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}` // this is the file for the segmentation software//
+         `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}` // this is the file for the segmentation software//
 
     });
 
@@ -56,7 +56,7 @@ function onResults(results) {
     const vh = results.image.height;
 
     //The scale to cover the screen
-    const scale = Math.max(cw/vw, ch,vh);
+    const scale = Math.max(cw/vw, ch/vh);
 
     const drawWidth = vw * scale;
     const drawHeight = vh * scale;
