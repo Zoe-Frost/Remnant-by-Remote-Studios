@@ -1,7 +1,8 @@
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
-const texture = document.getElementById("texture");
 const ctx = canvas.getContext("2d");
+
+const texture = document.getElementById("texture");
 
 let segmentation;
 
@@ -11,8 +12,10 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
+window.addEventListener("resize", resizeCanvas);
+
 // The camera set up
-async function setupCamera(params) {
+async function setupCamera() {
     const stream = await navigator.mediaDevices.getUserMedia({
         video: { width: 640, height: 480}
     });
@@ -31,7 +34,8 @@ async function setupCamera(params) {
 // The segmentation setup
 function setupSegmentation() {
     segmentation = new SelfieSegmentation({
-        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}` // this is the file for the segmentation software//
+        locateFile: (file) => 
+            `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}` // this is the file for the segmentation software//
 
     });
 
@@ -72,7 +76,6 @@ function onResults(results) {
         drawWidth,
         drawHeight
     );
-
     ctx.restore();
 
     //Applying the segmentation mask
@@ -80,7 +83,7 @@ function onResults(results) {
     ctx.scale(-1,1);
     ctx.globalCompositeOperation = "destination-in";
     ctx.drawImage(
-        results.segmentationMask,
+     results.segmentationMask,
         -(drawWidth + offsetX),
         offsetY,
         drawWidth,
@@ -90,25 +93,26 @@ function onResults(results) {
 
     //Filling the body with the small shapes aka, texture
     ctx.globalCompositeOperation = "source-in";
-    ctx.drawImage(texture,0,0,cw,ch);
+    ctx.drawImage(texture, 0, 0, cw, ch);
     //Resetting it
     ctx.globalCompositeOperation = "source-over";
 }
 
 //Looping the program
-async function render(params) {
+async function render() {
     await segmentation.send({ image: video});
     requestAnimationFrame(render);
     
 }
 
 //Starting the program
-async function start(params) {
+async function start() {
     await setupCamera();
+    
     resizeCanvas(); 
 
     setupSegmentation();
     render();
 }
 
-start()
+start();
