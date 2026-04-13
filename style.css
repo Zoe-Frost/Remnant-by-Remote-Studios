@@ -40,9 +40,6 @@ video, canvas{
 
 /* The glass overlay*/
 
-
-
-
 .glass-overlay {
     position: absolute;
     top: 0;
@@ -57,14 +54,5 @@ video, canvas{
     pointer-events: none;
 }
 
-h1{
-    background: transparent;
-    
-}
-
-.main-text{
-    text-decoration-color: #a7001a;
-    size: 60px;
-}
 
 
