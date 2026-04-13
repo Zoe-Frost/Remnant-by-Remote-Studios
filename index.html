@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remnant Interactive Poster</title>
+
+</head>
+<body>
+    <!--This is the webcam, it is not something that is seen but used, the feed is seen-->
+    <video id="video" autoplay playsinline style="display: none;"></video>
+
+    <!--This is the canvas output-->
+    <canvas id="canvas"></canvas>
+
+    <!--These are the little shapes that buid up the selfie segmentation-->
+    <img id="shapes" src="" alt="">
+
+    <!--This is the software from Mediapipe that allows for the selfie segmentation through the webcam-->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation"></script>
+
+    <!--This is my js file, this is connecting the html to the js-->
+    <script src="script.js"></script>
+
+    <!--This is connecting my css to the html-->
+    
+</body>
+</html>
