@@ -20,7 +20,15 @@ async function setupCamera(params) {
     video.srcObject = stream;
 
     return new Promise((resolve) => {
-        video
-    })
+        video.onloadedmetadata = () => {
+            video.play();
+            resolve();
+        };
+    });
+    
+}
+
+// The segmentation setup
+function setupSegmentation() {
     
 }
