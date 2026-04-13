@@ -51,13 +51,64 @@ function onResults(results) {
     const vw = results.image.width;
     const vh = results.image.height;
 
-    //the scale to cover the screen
+    //The scale to cover the screen
     const scale = Math.max(cw/vw, ch,vh);
 
     const drawWidth = vw * scale;
     const drawHeight = vh * scale;
 
     const offsetX = (cw - drawWidth) / 2;
-    const offsetY = ()
+    const offsetY = (ch - drawHeight) / 2;
 
+    ctx.clearRect(0,0,cw,ch);
+
+    // The mirrored camera
+    ctx.save();
+    ctx.scale(-1,1);
+    ctx.drawImage(
+        results.image,
+        -(drawWidth + offsetX),
+        offsetY,
+        drawWidth,
+        drawHeight
+    );
+
+    ctx.restore();
+
+    //Applying the segmentation mask
+    ctx.save();
+    ctx.scale(-1,1);
+    ctx.globalCompositeOperation = "destination-in";
+    ctx.drawImage(
+        results.segmentationMask,
+        -(drawWidth + offsetX),
+        offsetY,
+        drawWidth,
+        drawHeight
+    );
+    ctx.restore();
+
+    //Filling the body with the small shapes aka, texture
+    ctx.globalCompositeOperation = "source-in";
+    ctx.drawImage(texture,0,0,cw,ch);
+    //Resetting it
+    ctx.globalCompositeOperation = "source-over";
 }
+
+//Looping the program
+async function render(params) {
+    await segmentation.send({ image: video});
+    requestAnimationFrame(render);
+    
+}
+
+//Starting the program
+async function start(params) {
+    await setupCamera();
+    resizeCanvas(); 
+
+    setupSegmentation();
+    render();
+}
+
+start()
