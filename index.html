@@ -13,13 +13,18 @@
 <body>
 
 
-   <div class="glass-overlay"></div>
+   
 
     <!--This is the webcam, it is not something that is seen but used, the feed is seen-->
     <video id="video" autoplay playsinline style="display: none;"></video>
 
     <!--This is the canvas output-->
     <canvas id="canvas"></canvas>
+
+    <div class="overlay">
+        <h1>When you leave, your data remails</h1>
+        <img class="logo" src="assets/Colour_Primary.png">
+    </div>
 
     <!--These are the little shapes that buid up the selfie segmentation-->
     <img id="texture" src="assets/image-test-2.png" style="display: none;"/>

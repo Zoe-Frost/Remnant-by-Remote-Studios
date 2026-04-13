@@ -4,6 +4,13 @@ const ctx = canvas.getContext("2d");
 
 const texture = document.getElementById("texture");
 
+const logo = new Image (); 
+    logo.src ="Colour_Primary.png";
+
+logo.onload = () => {
+    console.log("logo loader");
+};
+
 let segmentation;
 
 // Resising the canvas to fit the full screen
@@ -46,6 +53,7 @@ function setupSegmentation() {
     segmentation.onResults(onResults);
 }
 
+
 //Drawing everything - the fullscreen, mirror, and texture
 function onResults(results) {
 
@@ -63,6 +71,7 @@ function onResults(results) {
 
     const offsetX = (cw - drawWidth) / 2;
     const offsetY = (ch - drawHeight) / 2;
+
 
     ctx.clearRect(0,0,cw,ch);
 
@@ -96,7 +105,13 @@ function onResults(results) {
     ctx.drawImage(texture, 0, 0, cw, ch);
     //Resetting it
     ctx.globalCompositeOperation = "source-over";
+
+    //Adding in the logo
+
 }
+
+
+
 
 //Looping the program
 async function render() {
