@@ -13,7 +13,7 @@
 /* Background and body */
 
 body{
-    background-color: var(--remnant-black);
+    background-color: var(--remnant-white);
     margin: 0;
     overflow: hidden;
 }
@@ -36,6 +36,35 @@ video, canvas{
     height: 100%;
     object-fit: cover;
     transform: scaleX(-1);
+}
+
+/* The glass overlay*/
+
+
+
+
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh ;
+
+    backdrop-filter: blur (12px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgb(152, 30, 30), 2;
+
+    pointer-events: none;
+}
+
+h1{
+    background: transparent;
+    
+}
+
+.main-text{
+    text-decoration-color: #a7001a;
+    size: 60px;
 }
 
 

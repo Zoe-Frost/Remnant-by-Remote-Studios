@@ -6,28 +6,15 @@
     <title>Remnant Interactive Poster</title>
 
     <!--This is simple basic styling-->
-    <style>
-        body{
-            margin: 0;
-            overflow: hidden;
-            background: black;
-        }
-
-        canvas{
-            position: absolute;
-            top: 0;
-            left: 0;
-
-        }
-    </style>
+  
 </head>
 
 <body>
 
-    <h1>When you leave, I remain</h1>
+    <h1 class="main-text">When you leave, I remain</h1>
     <div class="logo"><img src="" alt=""></div>
 
-    <div class="glass-overlay"></div>
+   <div class="glass-overlay"></div>
 
     <!--This is the webcam, it is not something that is seen but used, the feed is seen-->
     <video id="video" autoplay playsinline style="display: none;"></video>
@@ -35,8 +22,10 @@
     <!--This is the canvas output-->
     <canvas id="canvas"></canvas>
 
+    
+
     <!--These are the little shapes that buid up the selfie segmentation-->
-    <img id="texture" src="assets/test-remnant-texture-image.svg" style="display: none;"/>
+    <img id="texture" src="assets/image-test-3.jpg" style="display: none;"/>
 
     <!--This is the software from Mediapipe that allows for the selfie segmentation through the webcam-->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation"></script>
