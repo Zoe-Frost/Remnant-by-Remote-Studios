@@ -11,6 +11,16 @@
     --remnant-black: #050505;
 }
 
+
+/* Background and body */
+
+body{
+    background-color: var(--remnant-black);
+    margin: 0;
+    overflow: hidden;
+}
+
+
 /* Mirror effect for the webcam */
 .mirror{
     position: relative;
