@@ -6,14 +6,12 @@
     <title>Remnant Interactive Poster</title>
 
     <!--This is connecting my css to the html-->
-    <script src="style.css"></script>
+    <link rel="stylesheet" href="style.css">
   
 </head>
 
 <body>
 
-
-   
 
     <!--This is the webcam, it is not something that is seen but used, the feed is seen-->
     <video id="video" autoplay playsinline style="display: none;"></video>
@@ -21,12 +19,14 @@
     <!--This is the canvas output-->
     <canvas id="canvas"></canvas>
 
+    <!--This is where the logo, qr and text is placed to sit ontop of the selfie segmentation-->
     <div class="overlay">
-        <h1>When you leave, your data remails</h1>
-        <img class="logo" src="assets/Colour_Primary.png">
+        <img src="assets/Colour_Primary.png" class="logo">
+        <img src="assets/remnant-qr-code.png" class="qr">
+        <h1 class="title" >WHEN YOU LEAVE, I REMAIN</h1>
     </div>
 
-    <!--These are the little shapes that buid up the selfie segmentation-->
+    <!--The shapes / background for the selfie segmentation-->
     <img id="texture" src="assets/image-test-2.png" style="display: none;"/>
 
     <!--This is the software from Mediapipe that allows for the selfie segmentation through the webcam-->
