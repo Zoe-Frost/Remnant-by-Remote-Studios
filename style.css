@@ -1,7 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin:0 ;
-}
+
 /* Remnant colours*/
 :root{
     --remnant-darkred: #a7001a ;
@@ -13,30 +10,38 @@
 /* Background and body */
 
 body{
-    background-color: var(--remnant-white);
     margin: 0;
     overflow: hidden;
+    background: var(--remnant-white);
+}
+
+/*This is where we are saying that the video feed is not directly shown*/
+
+#video{
+    display: none;
 }
 
 
-/* Mirror effect for the webcam */
+/*This is showing that the texture isnt displayed as is so it can be implemented into the js/ selfie segmentation*/
+#texture{
+    display: none;
+}
+
+#canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mirror effect for the webcam  - this may not be relevant - need to check */
 .mirror{
     position: relative;
     width: 100vw;
     height: 100vh;
 }
 
-/* The canvas and video */
-
-video, canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scaleX(-1);
-}
 
 /* The overlay*/
 
@@ -50,23 +55,41 @@ video, canvas{
 }
 
 /* Styling the title*/
-.overlay h1{
+.title{
     position: absolute;
-    top: 40px;
+    bottom: 120px;
     width: 100%;
     text-align: center;
-    color: #050505;
-    font-size: 48px;
-    margin-top: 200px;
-    background: transparent;
+    color: var(--remnant-white);
+    font-family: 'Terminal Grotesque', sans-serif;
+    font-size: 60px;
+    margin: 0;
 }
 
-/* Styling the logo*/
-.logo {
+.qr{
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 100px;
+    width: 145px;
+    height: auto;
+}
+
+/* Styling the logo and placing it in the top left*/
+.logo {
+    position: absolute;
+    bottom: 140px;
+    right: 20px;
+    width: 150px;
+}
+
+/* Terminal Grotesque, the title font used for Remnant */
+@font-face {
+    font-family: 'Terminal Grotesque';
+    src: url(fonts/terminal-grotesque-webfont.woff)(format('woff')),
+         url(fonts/terminal-grotesque-webfont.woff2)(format('woff2'));
+
+    font-weight: normal;
+    font-style: normal ;
 }
 
 
