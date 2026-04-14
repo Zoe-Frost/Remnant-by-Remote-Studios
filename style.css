@@ -35,14 +35,6 @@ body{
     height: 100%;
 }
 
-/* Mirror effect for the webcam  - this may not be relevant - need to check */
-.mirror{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-}
-
-
 /* The overlay*/
 
 .overlay {
@@ -57,10 +49,10 @@ body{
 /* Styling the title*/
 .title{
     position: absolute;
-    bottom: 120px;
+    bottom: 50px;
     width: 100%;
     text-align: center;
-    color: var(--remnant-white);
+    color: var(--remnant-red);
     font-family: 'Terminal Grotesque', sans-serif;
     font-size: 60px;
     margin: 0;
@@ -69,7 +61,7 @@ body{
 /* Styling the qr code and placing it in the top right*/
 .qr{
     position: absolute;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
     width: 145px;
     height: auto;
@@ -78,9 +70,9 @@ body{
 /* Styling the logo and placing it in the top left*/
 .logo {
     position: absolute;
-    bottom: 140px;
-    right: 20px;
-    width: 150px;
+    top: -80px;
+    left: 20px;
+    width: 250px;
 }
 
 /* Terminal Grotesque, the title font used for Remnant */
