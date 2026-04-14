@@ -70,9 +70,9 @@ body{
 /* Styling the logo and placing it in the top left*/
 .logo {
     position: absolute;
-    top: -80px;
+    top: -60px;
     left: 20px;
-    width: 250px;
+    width: 200px;
 }
 
 /* Terminal Grotesque, the title font used for Remnant */
