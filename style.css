@@ -66,6 +66,7 @@ body{
     margin: 0;
 }
 
+/* Styling the qr code and placing it in the top right*/
 .qr{
     position: absolute;
     bottom: 20px;

@@ -106,8 +106,6 @@ function onResults(results) {
     //Resetting it
     ctx.globalCompositeOperation = "source-over";
 
-    //Adding in the logo
-
 }
 
 
